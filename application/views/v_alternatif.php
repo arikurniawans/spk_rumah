@@ -49,8 +49,6 @@
                     <th style="text-align: center;">C2</th>
                     <th style="text-align: center;">C3</th>
                     <th style="text-align: center;">C4</th>
-                    <th style="text-align: center;">C5</th>
-                    <th style="text-align: center;">C6</th>
                     <th style="text-align: center;">AKSI</th>
                   </tr>
                   </thead>
@@ -58,20 +56,16 @@
                   <?php $no=1; foreach($alternatif as $data){ ?>
                   <tr>
                       <td align="center"><?php echo $no++; ?></td>
-                      <td><?php echo $data->nama; ?></td>
+                      <td><?php echo $data->nama_perumahan; ?></td>
                       <td><?php echo $data->C1; ?></td>
                       <td><?php echo $data->C2; ?></td>
                       <td><?php echo $data->C3; ?></td>
                       <td><?php echo $data->C4; ?></td>
-                      <td><?php echo $data->C5; ?></td>
-                      <td><?php echo $data->C6; ?></td>
                       <td align="center">
                           <a href="javascript:void(0);" data-toggle="modal" data-target="#editkriteria<?php echo $data->id_nilai; ?>" class="btn btn-flat btn-primary btn-xs">Edit</a>
                           <a href="<?php echo base_url(); ?>kriteria/<?php echo $data->id_nilai; ?>" class="btn btn-flat btn-danger btn-xs">Hapus</a>
                       </td>
                   </tr>
-
-                  
 
                   <?php } ?>
                 </table>
@@ -105,17 +99,17 @@
             </div>
             <div class="modal-body">
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Personel (Alternatif)</label>
-                    <select class="form-control" name="personel">
-                        <option value="" selected="selected">-Pilih Personel-</option>
-                        <?php foreach($personel as $data){ ?>
-                        <option value="<?php echo $data->id_personel; ?>"><?php echo $data->nama; ?></option>
+                    <label for="exampleInputEmail1">Perumahan (Alternatif)</label>
+                    <select class="form-control" name="rumahan">
+                        <option value="" selected="selected">-Pilih Perumahan-</option>
+                        <?php foreach($rumah as $data){ ?>
+                        <option value="<?php echo $data->id_rumah; ?>"><?php echo $data->nama_perumahan; ?></option>
                         <?php } ?>
                   </select>
                   </div>
 
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Kriteria C1 - NILAI KESEHATAN PSYKOLOGI</label>
+                    <label for="exampleInputEmail1">Kriteria C1 - LUAS BANGUNAN (m<sup>2</sup>)</label>
                     <select class="form-control" name="c1">
                         <option value="" selected="selected">-Pilih Sub Kriteria-</option>
                         <?php foreach($c1 as $data){ ?>
@@ -125,7 +119,7 @@
                   </div>
 
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Kriteria C2 - NILAI DAN CATATAN DARI PIMPINAN</label>
+                    <label for="exampleInputEmail1">Kriteria C2 - SARANA & PRASARANA</label>
                     <select class="form-control" name="c2">
                         <option value="" selected="selected">-Pilih Sub Kriteria-</option>
                         <?php foreach($c2 as $data){ ?>
@@ -135,7 +129,7 @@
                   </div>
 
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Kriteria C3 - MASA DINAS</label>
+                    <label for="exampleInputEmail1">Kriteria C3 - HARGA</label>
                     <select class="form-control" name="c3">
                         <option value="" selected="selected">-Pilih Sub Kriteria-</option>
                         <?php foreach($c3 as $data){ ?>
@@ -145,7 +139,7 @@
                   </div>
 
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Kriteria C4 - KETERAMPILAN MENEMBAK</label>
+                    <label for="exampleInputEmail1">Kriteria C4 - AKSES PERUMAHAN DARI PUSAT KOTA</label>
                     <select class="form-control" name="c4">
                         <option value="" selected="selected">-Pilih Sub Kriteria-</option>
                         <?php foreach($c4 as $data){ ?>
@@ -154,25 +148,6 @@
                   </select>
                   </div>
 
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Kriteria C5 - KETERAMPILAN BELA DIRI</label>
-                    <select class="form-control" name="c5">
-                        <option value="" selected="selected">-Pilih Sub Kriteria-</option>
-                        <?php foreach($c5 as $data){ ?>
-                          <option value="<?php echo $data->id_kriteria; ?>"><?php echo $data->sub_kriteria; ?></option>
-                        <?php } ?>
-                  </select>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Kriteria C6 - KETERAMPILAN BAHASA ASING/DAERAH</label>
-                    <select class="form-control" name="c6">
-                        <option value="" selected="selected">-Pilih Sub Kriteria-</option>
-                        <?php foreach($c6 as $data){ ?>
-                          <option value="<?php echo $data->id_kriteria; ?>"><?php echo $data->sub_kriteria; ?></option>
-                        <?php } ?>
-                  </select>
-                  </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-flat btn-default" data-dismiss="modal">Batal</button>

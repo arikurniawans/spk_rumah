@@ -19,8 +19,6 @@ class Kriteria extends CI_Controller {
         $data['kriteria_c2'] = $this->Kriteria_model->showKriteriaC2()->result();
         $data['kriteria_c3'] = $this->Kriteria_model->showKriteriaC3()->result();
         $data['kriteria_c4'] = $this->Kriteria_model->showKriteriaC4()->result();
-        $data['kriteria_c5'] = $this->Kriteria_model->showKriteriaC5()->result();
-        $data['kriteria_c6'] = $this->Kriteria_model->showKriteriaC6()->result();
         $data['bobot'] = $this->Kriteria_model->showBobot()->result();
 
         $this->load->view('parts/header');
@@ -152,46 +150,168 @@ class Kriteria extends CI_Controller {
         }
 
     }
-    public function createc5()
+
+    public function editc1()
     {
+        $id = $this->input->post('id_c1');
+
         $data = array(
-            'sub_kriteria' => $this->input->post('subc5'),
-            'id_nilai' =>$this->input->post('r5')
+            'sub_kriteria' => $this->input->post('subc1'),
+            'id_nilai' =>$this->input->post('r1')
         );
 
-        $simpan = $this->Kriteria_model->createSubkriteriaC5($data);
-        if($simpan)
+        $ubah = $this->Kriteria_model->editKriteriac1($id, $data);
+        if($ubah)
         {
-            $this->session->set_flashdata('message','successfull'); 
+            $this->session->set_flashdata('message2','successfull'); 
             redirect('kriteria');
         }
         else
         {
-            $this->session->set_flashdata('message','error'); 
+            $this->session->set_flashdata('message2','error'); 
             redirect('kriteria');
         }
 
     }
 
-    public function createc6()
+    public function editc2()
     {
+        $id = $this->input->post('id_c2');
+
         $data = array(
-            'sub_kriteria' => $this->input->post('subc6'),
-            'id_nilai' =>$this->input->post('r6')
+            'sub_kriteria' => $this->input->post('subc2'),
+            'id_nilai' =>$this->input->post('r2')
         );
 
-        $simpan = $this->Kriteria_model->createSubkriteriaC6($data);
-        if($simpan)
+        $ubah = $this->Kriteria_model->editKriteriac2($id, $data);
+        if($ubah)
         {
-            $this->session->set_flashdata('message','successfull'); 
+            $this->session->set_flashdata('message2','successfull'); 
             redirect('kriteria');
         }
         else
         {
-            $this->session->set_flashdata('message','error'); 
+            $this->session->set_flashdata('message2','error'); 
             redirect('kriteria');
         }
 
     }
+
+
+    public function editc3()
+    {
+        $id = $this->input->post('id_c3');
+
+        $data = array(
+            'sub_kriteria' => $this->input->post('subc3'),
+            'id_nilai' =>$this->input->post('r3')
+        );
+
+        $ubah = $this->Kriteria_model->editKriteriac3($id, $data);
+        if($ubah)
+        {
+            $this->session->set_flashdata('message2','successfull'); 
+            redirect('kriteria');
+        }
+        else
+        {
+            $this->session->set_flashdata('message2','error'); 
+            redirect('kriteria');
+        }
+
+    }
+
+
+    public function editc4()
+    {
+        $id = $this->input->post('id_c4');
+
+        $data = array(
+            'sub_kriteria' => $this->input->post('subc4'),
+            'id_nilai' =>$this->input->post('r4')
+        );
+
+        $ubah = $this->Kriteria_model->editKriteriac4($id, $data);
+        if($ubah)
+        {
+            $this->session->set_flashdata('message2','successfull'); 
+            redirect('kriteria');
+        }
+        else
+        {
+            $this->session->set_flashdata('message2','error'); 
+            redirect('kriteria');
+        }
+
+    }
+
+    public function deletec1()
+    {
+        $id = $this->input->post('id_c1');
+        
+        $hapus = $this->Kriteria_model->deletec1($id);
+        if($hapus)
+        {
+            $this->session->set_flashdata('message3','successfull');
+            redirect('kriteria');
+        }
+        else
+        {
+            $this->session->set_flashdata('message3','error');
+            redirect('kriteria');
+        }
+    }
+
+    public function deletec2()
+    {
+        $id = $this->input->post('id_c2');
+        
+        $hapus = $this->Kriteria_model->deletec2($id);
+        if($hapus)
+        {
+            $this->session->set_flashdata('message3','successfull');
+            redirect('kriteria');
+        }
+        else
+        {
+            $this->session->set_flashdata('message3','error');
+            redirect('kriteria');
+        }
+    }
+
+    public function deletec3()
+    {
+        $id = $this->input->post('id_c3');
+        
+        $hapus = $this->Kriteria_model->deletec3($id);
+        if($hapus)
+        {
+            $this->session->set_flashdata('message3','successfull');
+            redirect('kriteria');
+        }
+        else
+        {
+            $this->session->set_flashdata('message3','error');
+            redirect('kriteria');
+        }
+    }
+
+    public function deletec4()
+    {
+        $id = $this->input->post('id_c4');
+        
+        $hapus = $this->Kriteria_model->deletec4($id);
+        if($hapus)
+        {
+            $this->session->set_flashdata('message3','successfull');
+            redirect('kriteria');
+        }
+        else
+        {
+            $this->session->set_flashdata('message3','error');
+            redirect('kriteria');
+        }
+    }
+
 
 }

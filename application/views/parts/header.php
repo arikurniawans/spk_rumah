@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sistem Rekomendasi Personel</title>
+  <title>Sistem Rekomendasi Pemilihan Perumahan</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -52,7 +52,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="javascript:void(0);" class="nav-link">Sistem Informasi Rekomendasi Personel</a>
+        <a href="javascript:void(0);" class="nav-link">Sistem Informasi Rekomendasi Pemilihan Perumahan</a>
       </li>
     </ul>
 

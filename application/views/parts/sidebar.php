@@ -2,8 +2,8 @@
  <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Lambang_Polda_Lampung.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">SPK Rek. Personel</span>
+      <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Lambang_Polda_Lampung.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> -->
+      <span class="brand-text font-weight-light">SPK Rek. Perumahan</span>
     </a>
 
     <!-- Sidebar -->
@@ -23,20 +23,20 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
+          <!-- <li class="nav-item menu-open">
             <a href="<?php echo base_url(); ?>dashboard" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
               </p>
             </a>
-          </li>
+          </li> -->
 
           <li class="nav-item menu-open">
-            <a href="<?php echo base_url(); ?>pengguna" class="nav-link">
-              <i class="nav-icon fas fa-users"></i>
+            <a href="<?php echo base_url(); ?>rumah" class="nav-link">
+              <i class="nav-icon fas fa-home"></i>
               <p>
-                Pengguna
+                Perumahan
               </p>
             </a>
           </li>
@@ -64,6 +64,15 @@
               <i class="nav-icon fas fa-chart-line"></i>
               <p>
                 Perangkingan
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item menu-open">
+            <a href="<?php echo base_url(); ?>pengguna" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Pengguna
               </p>
             </a>
           </li>

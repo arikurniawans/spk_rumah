@@ -102,4 +102,60 @@ class Kriteria_model extends CI_Model
         return $query;
     }
 
+    public function editKriteriac1($id,$data)
+    {
+        $this->db->where('id_kriteria',$id);
+        $this->db->update('kriteria_c1',$data);
+        return true;
+    }
+
+    public function editKriteriac2($id,$data)
+    {
+        $this->db->where('id_kriteria',$id);
+        $this->db->update('kriteria_c2',$data);
+        return true;
+    }
+
+    public function editKriteriac3($id,$data)
+    {
+        $this->db->where('id_kriteria',$id);
+        $this->db->update('kriteria_c3',$data);
+        return true;
+    }
+
+    public function editKriteriac4($id,$data)
+    {
+        $this->db->where('id_kriteria',$id);
+        $this->db->update('kriteria_c4',$data);
+        return true;
+    }
+
+    public function deletec1($id)
+    {
+        $this->db->where('id_kriteria',$id);
+        $this->db->delete('kriteria_c1');
+        return true;
+    }
+
+    public function deletec2($id)
+    {
+        $this->db->where('id_kriteria',$id);
+        $this->db->delete('kriteria_c2');
+        return true;
+    }
+
+    public function deletec3($id)
+    {
+        $this->db->where('id_kriteria',$id);
+        $this->db->delete('kriteria_c3');
+        return true;
+    }
+
+    public function deletec4($id)
+    {
+        $this->db->where('id_kriteria',$id);
+        $this->db->delete('kriteria_c4');
+        return true;
+    }
+
 }

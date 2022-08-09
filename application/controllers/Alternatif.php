@@ -9,7 +9,7 @@ class Alternatif extends CI_Controller {
         $this->load->helper(array('url'));
         $this->load->library(array('form_validation','pagination','session'));
         $this->load->model('Alternatif_model');
-        $this->load->model('Pengguna_model');
+        $this->load->model('Rumah_model');
         $this->load->model('Kriteria_model');
         $this->load->model('BobotKriteria_model');
 
@@ -18,13 +18,11 @@ class Alternatif extends CI_Controller {
     public function index()
     {
         $data['alternatif'] = $this->Alternatif_model->showAlternatif()->result();
-        $data['pengguna'] = $this->Pengguna_model->showPengguna()->result();
+        $data['rumah'] = $this->Rumah_model->showRumah()->result();
         $data['c1'] = $this->Kriteria_model->showKriteriaC1()->result();
         $data['c2'] = $this->Kriteria_model->showKriteriaC2()->result();
         $data['c3'] = $this->Kriteria_model->showKriteriaC3()->result();
         $data['c4'] = $this->Kriteria_model->showKriteriaC4()->result();
-        $data['c5'] = $this->Kriteria_model->showKriteriaC5()->result();
-        $data['c6'] = $this->Kriteria_model->showKriteriaC6()->result();
 
         $this->load->view('parts/header');
         $this->load->view('parts/sidebar');
@@ -35,13 +33,11 @@ class Alternatif extends CI_Controller {
     public function create()
     {
         $data = array(
-            'id_pengguna' => $this->input->post('pengguna'),
+            'id_rumah' => $this->input->post('rumahan'),
             'c1' => $this->input->post('c1'),
             'c2' => $this->input->post('c2'),
             'c3' => $this->input->post('c3'),
             'c4' => $this->input->post('c4'),
-            'c5' => $this->input->post('c5'),
-            'c6' => $this->input->post('c6'),
         );
 
         $simpan = $this->Alternatif_model->createAlternatif($data);

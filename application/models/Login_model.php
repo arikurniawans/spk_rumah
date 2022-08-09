@@ -33,7 +33,7 @@ class login_model extends CI_Model
                 $session['nama'] = $result[0]->nama;
                 $session['no_telpon'] = $result[0]->no_telpon;
                 $this->session->set_userdata($session);
-                redirect('dashboard');
+                redirect('rumah');
 
             }else{
                 $this->session->set_flashdata("error1","failpassword");

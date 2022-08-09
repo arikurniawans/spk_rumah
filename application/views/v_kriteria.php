@@ -32,7 +32,7 @@
               <div class="card-header">
                 <h3 class="card-title">
                   <i class="fas fa-chart-pie mr-1"></i>
-                  Kriteria C1 - LUAS BANGUNAN
+                  Kriteria C1 - LUAS BANGUNAN (m<sup>2</sup>)
                 </h3>
                 <div class="card-tools">
                     <ul class="nav nav-pills ml-auto">
@@ -71,6 +71,77 @@
                           <a href="javascript:void(0);" data-toggle="modal" data-target="#hapusc1<?php echo $c1->id_kriteria; ?>" class="btn btn-flat btn-danger btn-xs">Hapus</a>
                       </td>
                   </tr>
+
+                  <div class="modal fade" id="hapusc1<?php echo $c1->id_kriteria; ?>">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                          <form action="<?php echo base_url(); ?>kriteria/deletec1" method="post">
+                            <div class="modal-header" style="background-color: #dc3545; color: white;">
+                              <h4 class="modal-title">Hapus Kriteria</h4>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                            <input type="hidden" name="id_c1" value="<?php echo $c1->id_kriteria; ?>"/>
+                              Apakah anda ingin menghapus data kriteria berikut ?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-flat btn-default" data-dismiss="modal">Batal</button>
+                                <button type="submit" class="btn btn-flat btn-danger">Hapus Data Kriteria</button>
+                            </div>
+                          </div>
+                          <!-- /.modal-content -->
+                          </form>
+                        </div>
+                        <!-- /.modal-dialog -->
+                      </div>
+                      <!-- /.modal -->
+
+
+                  <div class="modal fade" id="editc1<?php echo $c1->id_kriteria; ?>">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                            <form action="<?php echo base_url(); ?>kriteria/editc1" method="post">
+                              <div class="modal-header" style="background-color: #17a2b8; color: white;">
+                                <h4 class="modal-title">Ubah Kriteria c1</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              
+                          <div class="modal-body">
+                              <div class="form-group">
+                              <label for="exampleInputEmail1">Sub Kriteria</label>
+                              <input type="hidden" name="id_c1" value="<?php echo $c1->id_kriteria; ?>"/>
+                              <input type="text" class="form-control" id="exampleInputEmail1" value="<?php echo $c1->sub_kriteria; ?>" name="subc1" placeholder="Ketikan sub kriteria">
+                              </div>
+
+                              <div class="form-group">
+                              <label>Ranking Penilaian</label>
+                              <select class="form-control" name="r1">
+                              <option selected="selected" value="<?php echo $c1->nilai; ?>"> <?php echo $c1->bobot; ?> </option>
+                              <?php foreach($bobot as $a){ ?>
+                              <option value="<?php echo $a->id_nilai; ?>"><?php echo $a->bobot; ?></option>
+                              <?php } ?>
+                              </select>
+                              </div>
+                              <!-- /.form-group -->
+                          </div>
+
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-flat btn-default" data-dismiss="modal">Batal</button>
+                                <button type="submit" class="btn btn-flat btn-info">Simpan Perubahan Data</button>
+                              </div>
+                            </div>
+                            <!-- /.modal-content -->
+                            </form>
+                          </div>
+                          <!-- /.modal-dialog -->
+                        </div>
+                        <!-- /.modal -->
+
+
                   <?php } ?>
                   </tbody>
                 </table>
@@ -122,6 +193,75 @@
                           <a href="javascript:void(0);" data-toggle="modal" data-target="#hapusc2<?php echo $c2->id_kriteria; ?>" class="btn btn-flat btn-danger btn-xs">Hapus</a>
                       </td>
                   </tr>
+
+                  <div class="modal fade" id="hapusc2<?php echo $c2->id_kriteria; ?>">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                          <form action="<?php echo base_url(); ?>kriteria/deletec2" method="post">
+                            <div class="modal-header" style="background-color: #dc3545; color: white;">
+                              <h4 class="modal-title">Hapus Kriteria</h4>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                            <input type="hidden" name="id_c2" value="<?php echo $c2->id_kriteria; ?>"/>
+                              Apakah anda ingin menghapus data kriteria berikut ?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-flat btn-default" data-dismiss="modal">Batal</button>
+                                <button type="submit" class="btn btn-flat btn-danger">Hapus Data Kriteria</button>
+                            </div>
+                          </div>
+                          <!-- /.modal-content -->
+                          </form>
+                        </div>
+                        <!-- /.modal-dialog -->
+                      </div>
+                      <!-- /.modal -->
+
+                  <div class="modal fade" id="editc2<?php echo $c2->id_kriteria; ?>">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                            <form action="<?php echo base_url(); ?>kriteria/editc2" method="post">
+                              <div class="modal-header" style="background-color: #17a2b8; color: white;">
+                                <h4 class="modal-title">Ubah Kriteria c2</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              
+                          <div class="modal-body">
+                              <div class="form-group">
+                              <label for="exampleInputEmail1">Sub Kriteria</label>
+                              <input type="hidden" name="id_c2" value="<?php echo $c2->id_kriteria; ?>"/>
+                              <input type="text" class="form-control" id="exampleInputEmail1" value="<?php echo $c2->sub_kriteria; ?>" name="subc2" placeholder="Ketikan sub kriteria">
+                              </div>
+
+                              <div class="form-group">
+                              <label>Ranking Penilaian</label>
+                              <select class="form-control" name="r2">
+                              <option selected="selected" value="<?php echo $c2->nilai; ?>"> <?php echo $c2->bobot; ?> </option>
+                              <?php foreach($bobot as $a){ ?>
+                              <option value="<?php echo $a->id_nilai; ?>"><?php echo $a->bobot; ?></option>
+                              <?php } ?>
+                              </select>
+                              </div>
+                              <!-- /.form-group -->
+                          </div>
+
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-flat btn-default" data-dismiss="modal">Batal</button>
+                                <button type="submit" class="btn btn-flat btn-info">Simpan Perubahan Data</button>
+                              </div>
+                            </div>
+                            <!-- /.modal-content -->
+                            </form>
+                          </div>
+                          <!-- /.modal-dialog -->
+                        </div>
+                        <!-- /.modal -->
+
                   <?php } ?>
                   </tbody>
                 </table>
@@ -172,6 +312,76 @@
                           <a href="javascript:void(0);" data-toggle="modal" data-target="#hapusc3<?php echo $c3->id_kriteria; ?>" class="btn btn-flat btn-danger btn-xs">Hapus</a>
                       </td>
                   </tr>
+
+                                    <div class="modal fade" id="hapusc3<?php echo $c3->id_kriteria; ?>">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                          <form action="<?php echo base_url(); ?>kriteria/deletec3" method="post">
+                            <div class="modal-header" style="background-color: #dc3545; color: white;">
+                              <h4 class="modal-title">Hapus Kriteria</h4>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                            <input type="hidden" name="id_c3" value="<?php echo $c3->id_kriteria; ?>"/>
+                              Apakah anda ingin menghapus data kriteria berikut ?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-flat btn-default" data-dismiss="modal">Batal</button>
+                                <button type="submit" class="btn btn-flat btn-danger">Hapus Data Kriteria</button>
+                            </div>
+                          </div>
+                          <!-- /.modal-content -->
+                          </form>
+                        </div>
+                        <!-- /.modal-dialog -->
+                      </div>
+                      <!-- /.modal -->
+
+                  <div class="modal fade" id="editc3<?php echo $c3->id_kriteria; ?>">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                            <form action="<?php echo base_url(); ?>kriteria/editc3" method="post">
+                              <div class="modal-header" style="background-color: #17a2b8; color: white;">
+                                <h4 class="modal-title">Ubah Kriteria c3</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              
+                          <div class="modal-body">
+                              <div class="form-group">
+                              <label for="exampleInputEmail1">Sub Kriteria</label>
+                              <input type="hidden" name="id_c3" value="<?php echo $c3->id_kriteria; ?>"/>
+                              <input type="text" class="form-control" id="exampleInputEmail1" value="<?php echo $c3->sub_kriteria; ?>" name="subc3" placeholder="Ketikan sub kriteria">
+                              </div>
+
+                              <div class="form-group">
+                              <label>Ranking Penilaian</label>
+                              <select class="form-control" name="r3">
+                              <option selected="selected" value="<?php echo $c3->nilai; ?>"> <?php echo $c3->bobot; ?> </option>
+                              <?php foreach($bobot as $a){ ?>
+                              <option value="<?php echo $a->id_nilai; ?>"><?php echo $a->bobot; ?></option>
+                              <?php } ?>
+                              </select>
+                              </div>
+                              <!-- /.form-group -->
+                          </div>
+
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-flat btn-default" data-dismiss="modal">Batal</button>
+                                <button type="submit" class="btn btn-flat btn-info">Simpan Perubahan Data</button>
+                              </div>
+                            </div>
+                            <!-- /.modal-content -->
+                            </form>
+                          </div>
+                          <!-- /.modal-dialog -->
+                        </div>
+                        <!-- /.modal -->
+
+
                   <?php } ?>
                   </tbody>
                 </table>
@@ -188,7 +398,7 @@
               <div class="card-header">
                 <h3 class="card-title">
                   <i class="fas fa-chart-pie mr-1"></i>
-                  Kriteria C4 - AKSES PERUMAHAN DARI PUSAT KOTA
+                  Kriteria C4 - AKSES PERUMAHAN DARI PUSAT KOTA (menit)
                 </h3>
                 <div class="card-tools">
                     <ul class="nav nav-pills ml-auto">
@@ -225,6 +435,75 @@
                           <a href="javascript:void(0);" data-toggle="modal" data-target="#hapusc4<?php echo $c4->id_kriteria; ?>" class="btn btn-flat btn-danger btn-xs">Hapus</a>
                       </td>
                   </tr>
+
+                  <div class="modal fade" id="hapusc4<?php echo $c4->id_kriteria; ?>">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                          <form action="<?php echo base_url(); ?>kriteria/deletec4" method="post">
+                            <div class="modal-header" style="background-color: #dc3545; color: white;">
+                              <h4 class="modal-title">Hapus Kriteria</h4>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                            <input type="hidden" name="id_c4" value="<?php echo $c4->id_kriteria; ?>"/>
+                              Apakah anda ingin menghapus data kriteria berikut ?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-flat btn-default" data-dismiss="modal">Batal</button>
+                                <button type="submit" class="btn btn-flat btn-danger">Hapus Data Kriteria</button>
+                            </div>
+                          </div>
+                          <!-- /.modal-content -->
+                          </form>
+                        </div>
+                        <!-- /.modal-dialog -->
+                      </div>
+                      <!-- /.modal -->
+
+                  <div class="modal fade" id="editc4<?php echo $c4->id_kriteria; ?>">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                            <form action="<?php echo base_url(); ?>kriteria/editc4" method="post">
+                              <div class="modal-header" style="background-color: #17a2b8; color: white;">
+                                <h4 class="modal-title">Ubah Kriteria c4</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              
+                          <div class="modal-body">
+                              <div class="form-group">
+                              <label for="exampleInputEmail1">Sub Kriteria</label>
+                              <input type="hidden" name="id_c4" value="<?php echo $c4->id_kriteria; ?>"/>
+                              <input type="text" class="form-control" id="exampleInputEmail1" value="<?php echo $c4->sub_kriteria; ?>" name="subc4" placeholder="Ketikan sub kriteria">
+                              </div>
+
+                              <div class="form-group">
+                              <label>Ranking Penilaian</label>
+                              <select class="form-control" name="r4">
+                              <option selected="selected" value="<?php echo $c1->nilai; ?>"> <?php echo $c4->bobot; ?> </option>
+                              <?php foreach($bobot as $a){ ?>
+                              <option value="<?php echo $a->id_nilai; ?>"><?php echo $a->bobot; ?></option>
+                              <?php } ?>
+                              </select>
+                              </div>
+                              <!-- /.form-group -->
+                          </div>
+
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-flat btn-default" data-dismiss="modal">Batal</button>
+                                <button type="submit" class="btn btn-flat btn-info">Simpan Perubahan Data</button>
+                              </div>
+                            </div>
+                            <!-- /.modal-content -->
+                            </form>
+                          </div>
+                          <!-- /.modal-dialog -->
+                        </div>
+                        <!-- /.modal -->
+                        
                   <?php } ?>
                   </tbody>
                 </table>
@@ -274,6 +553,7 @@
                       <?php foreach($bobot as $a){ ?>
                       <option value="<?php echo $a->id_nilai; ?>"><?php echo $a->bobot; ?></option>
                       <?php } ?>
+
                     </select>
                   </div>
                   <!-- /.form-group -->
@@ -313,9 +593,10 @@
                     <label>Ranking Penilaian</label>
                     <select class="form-control" name="r2">
                       <option selected="selected" value="">-Pilih Ranking Penilaian-</option>
-                      <?php foreach($bobot as $b){ ?>
-                      <option value="<?php echo $b->id_nilai; ?>"><?php echo $b->bobot; ?></option>
+                      <?php foreach($bobot as $a){ ?>
+                      <option value="<?php echo $a->id_nilai; ?>"><?php echo $a->bobot; ?></option>
                       <?php } ?>
+
                     </select>
                   </div>
                   <!-- /.form-group -->
@@ -354,9 +635,10 @@
                     <label>Ranking Penilaian</label>
                     <select class="form-control" name="r3">
                       <option selected="selected" value="">-Pilih Ranking Penilaian-</option>
-                      <?php foreach($bobot as $c){ ?>
-                      <option value="<?php echo $c->id_nilai; ?>"><?php echo $c->bobot; ?></option>
+                      <?php foreach($bobot as $a){ ?>
+                      <option value="<?php echo $a->id_nilai; ?>"><?php echo $a->bobot; ?></option>
                       <?php } ?>
+
                     </select>
                   </div>
 
@@ -394,9 +676,10 @@
                     <label>Ranking Penilaian</label>
                     <select class="form-control" name="r4">
                       <option selected="selected" value="">-Pilih Ranking Penilaian-</option>
-                      <?php foreach($bobot as $d){ ?>
-                      <option value="<?php echo $d->id_nilai; ?>"><?php echo $d->bobot; ?></option>
+                      <?php foreach($bobot as $a){ ?>
+                      <option value="<?php echo $a->id_nilai; ?>"><?php echo $a->bobot; ?></option>
                       <?php } ?>
+
                     </select>
                   </div>
 
@@ -412,87 +695,6 @@
         <!-- /.modal-dialog -->
       </div>
       <!-- /.modal -->
-
-      <!-- Modal kriteria C5 -->
-      <div class="modal fade" id="modal-lg-c5">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-          <form action="<?php echo base_url(); ?>kriteria/createc5" method="post">
-            <div class="modal-header" style="background-color: #17a2b8; color: white;">
-              <h4 class="modal-title">Tambah Data Sub Kriteria C5</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Sub Kriteria</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" name="subc5" placeholder="Ketikan sub kriteria">
-                  </div>
-
-                  <div class="form-group">
-                    <label>Ranking Penilaian</label>
-                    <select class="form-control" name="r5">
-                      <option selected="selected" value="">-Pilih Ranking Penilaian-</option>
-                      <?php foreach($bobot as $e){ ?>
-                      <option value="<?php echo $e->id_nilai; ?>"><?php echo $e->bobot; ?></option>
-                      <?php } ?>
-                    </select>
-                  </div>
-
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-flat btn-default" data-dismiss="modal">Batal</button>
-              <button type="submit" class="btn btn-flat btn-info">Simpan Data</button>
-            </div>
-          </div>
-          <!-- /.modal-content -->
-          </form>
-        </div>
-        <!-- /.modal-dialog -->
-      </div>
-      <!-- /.modal -->
-
-      <!-- Modal kriteria C6 -->
-      <div class="modal fade" id="modal-lg-c6">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-          <form action="<?php echo base_url(); ?>kriteria/createc6" method="post">
-            <div class="modal-header" style="background-color: #17a2b8; color: white;">
-              <h4 class="modal-title">Tambah Data Sub Kriteria C6</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Sub Kriteria</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" name="subc6" placeholder="Ketikan sub kriteria">
-                  </div>
-
-                  <div class="form-group">
-                    <label>Ranking Penilaian</label>
-                    <select class="form-control" name="r6">
-                      <option selected="selected" value="">-Pilih Ranking Penilaian-</option>
-                      <?php foreach($bobot as $f){ ?>
-                      <option value="<?php echo $f->id_nilai; ?>"><?php echo $f->bobot; ?></option>
-                      <?php } ?>
-                    </select>
-                  </div>
-
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-flat btn-default" data-dismiss="modal">Batal</button>
-              <button type="submit" class="btn btn-flat btn-info">Simpan Data</button>
-            </div>
-          </div>
-          <!-- /.modal-content -->
-          </form>
-        </div>
-        <!-- /.modal-dialog -->
-      </div>
-      <!-- /.modal -->
-
       
 
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

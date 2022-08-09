@@ -46,21 +46,17 @@
                     <th style="text-align: center;">C2</th>
                     <th style="text-align: center;">C3</th>
                     <th style="text-align: center;">C4</th>
-                    <th style="text-align: center;">C5</th>
-                    <th style="text-align: center;">C6</th>
                   </tr>
                   </thead>
                   <tbody>
                   <?php $no=1; foreach($alternatif as $data){ ?>
                   <tr>
                       <td align="center"><?php echo $no++; ?></td>
-                      <td><?php echo $data->nama; ?></td>
+                      <td><?php echo $data->nama_perumahan; ?></td>
                       <td><?php echo $data->C1; ?></td>
                       <td><?php echo $data->C2; ?></td>
                       <td><?php echo $data->C3; ?></td>
                       <td><?php echo $data->C4; ?></td>
-                      <td><?php echo $data->C5; ?></td>
-                      <td><?php echo $data->C6; ?></td>
                   </tr>
                   <?php } ?>
                 </table>
@@ -84,21 +80,17 @@
                     <th style="text-align: center;">C2</th>
                     <th style="text-align: center;">C3</th>
                     <th style="text-align: center;">C4</th>
-                    <th style="text-align: center;">C5</th>
-                    <th style="text-align: center;">C6</th>
                   </tr>
                   </thead>
                   <tbody>
                   <?php $no=1; foreach($ranking as $data){ ?>
                   <tr>
                       <td align="center"><?php echo $no++; ?></td>
-                      <td><?php echo $data->nama; ?></td>
+                      <td><?php echo $data->nama_perumahan; ?></td>
                       <td align="center"><?php echo $data->NC1; ?></td>
                       <td align="center"><?php echo $data->NC2; ?></td>
                       <td align="center"><?php echo $data->NC3; ?></td>
                       <td align="center"><?php echo $data->NC4; ?></td>
-                      <td align="center"><?php echo $data->NC5; ?></td>
-                      <td align="center"><?php echo $data->NC6; ?></td>
                   </tr>
                   <?php } ?>
                 </table>
@@ -122,21 +114,17 @@
                     <th style="text-align: center;">C2</th>
                     <th style="text-align: center;">C3</th>
                     <th style="text-align: center;">C4</th>
-                    <th style="text-align: center;">C5</th>
-                    <th style="text-align: center;">C6</th>
                   </tr>
                   </thead>
                   <tbody>
                   <?php $no=1; foreach($ranking as $data){ ?>
                   <tr>
                       <td align="center"><?php echo $no++; ?></td>
-                      <td><?php echo $data->nama; ?></td>
+                      <td><?php echo $data->nama_perumahan; ?></td>
                       <td align="center"><?php echo $data->NC1 / $maxc1[0]->max_c1; ?></td>
                       <td align="center"><?php echo $data->NC2 / $maxc2[0]->max_c2; ?></td>
                       <td align="center"><?php echo $data->NC3 / $maxc3[0]->max_c3; ?></td>
                       <td align="center"><?php echo $data->NC4 / $maxc4[0]->max_c4; ?></td>
-                      <td align="center"><?php echo $data->NC5 / $maxc5[0]->max_c5; ?></td>
-                      <td align="center"><?php echo $data->NC6 / $maxc6[0]->max_c6; ?></td>
                   </tr>
                   <?php } ?>
                 </table>
@@ -173,15 +161,13 @@
                         $hasilSAW = ($data->NC1 / $maxc1[0]->max_c1 * 15) + 
                                         ($data->NC2 / $maxc2[0]->max_c2 * 25) +  
                                         ($data->NC3 / $maxc3[0]->max_c3 * 15) +  
-                                        ($data->NC4 / $maxc4[0]->max_c4 * 20) +  
-                                        ($data->NC5 / $maxc5[0]->max_c5 * 15) +  
-                                        ($data->NC6 / $maxc6[0]->max_c6 * 10);
+                                        ($data->NC4 / $maxc4[0]->max_c4 * 20);
 
                         array_push($arrayBaru, $hasilSAW);
                   ?>
                   <tr>
                       <td align="center"><?php echo $no++; ?></td>
-                      <td><?php echo $data->nama; ?></td>
+                      <td><?php echo $data->nama_perumahan; ?></td>
                       <td align="center"><?php echo $hasilSAW; ?></td>
                   </tr>
                   <?php } ?>
@@ -200,8 +186,8 @@
               <!-- /.card-header -->
               <div class="card-body">
                     <?php if(!empty($arrayBaru)){ ?>
-                    <font align="justify">Sistem rekomendasi personel menggunakan metode SAW <i>(Simple Additive Weighting)</i>
-                    merekomendasikan personel atas nama <b><font id="namapersonel"></font></b>
+                    <font align="justify">Sistem rekomendasi pemilihan perumahan menggunakan metode SAW <i>(Simple Additive Weighting)</i>
+                    merekomendasikan perumahan <b><font id="namarumah"></font></b>
                     dengan hasil perangkingan <b><?php echo max($arrayBaru); ?></b></font>
                     <?php }else{ echo "Belum ada data perangkingan !"; } ?>
               </div>
@@ -223,17 +209,19 @@
   <script>
           var tabel = document.getElementById('tabelrank');
           var maxVal;
-          var namaPersonel;
+          var namaRumah;
+          
           for(var i=1; i < tabel.rows.length; i++){
             if(i == 1){
               maxVal = tabel.rows[i].cells[2].innerHTML;
-              namaPersonel = tabel.rows[i].cells[1].innerHTML;
+              namaRumah = tabel.rows[i].cells[1].innerHTML;
             }else if(maxVal < tabel.rows[i].cells[2].innerHTML){
               maxVal = tabel.rows[i].cells[2].innerHTML;
-              namaPersonel = tabel.rows[i].cells[1].innerHTML;
+              namaRumah = tabel.rows[i].cells[1].innerHTML;
             }
+            // console.log(tabel.rows[i].cells[1].innerHTML);
           }
-          document.getElementById('namapersonel').innerHTML = namaPersonel;
+          document.getElementById('namarumah').innerHTML = namaRumah;
   </script>
 
   

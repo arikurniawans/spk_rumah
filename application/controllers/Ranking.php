@@ -21,8 +21,6 @@ class Ranking extends CI_Controller {
         $data['maxc2'] = $this->Ranking_model->showMaxC2()->result();
         $data['maxc3'] = $this->Ranking_model->showMaxC3()->result();
         $data['maxc4'] = $this->Ranking_model->showMaxC4()->result();
-        $data['maxc5'] = $this->Ranking_model->showMaxC5()->result();
-        $data['maxc6'] = $this->Ranking_model->showMaxC6()->result();
 
         $this->load->view('parts/header');
         $this->load->view('parts/sidebar');

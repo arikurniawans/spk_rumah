@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sistem Rekomendasi Personel Ditpamobvit Polda Lampung | Log in (v2)</title>
+  <title>Sistem Rekomendasi Pemilihan Perumahan Bandar Lampung | Log in (v2)</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -17,16 +17,17 @@
 </head>
 <body class="hold-transition login-page">
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Lambang_Polda_Lampung.png" width="10%"/><br/>
+<!-- <img src="<?php echo base_url(); ?>assets/dist/img/loginrumah.png" width="10%"/><br/> -->
 
 <div class="login-box">
   <!-- /.login-logo -->
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
-      <a href="javascript:void(0);" class="h1"><b>Rekomendasi Personel</b></a>
+      <!-- <a href="javascript:void(0);" class="h1"><b>Rekomendasi Pemilihan Perumahan</b></a> -->
+      <img src="<?php echo base_url(); ?>assets/dist/img/loginrumah.png" width="50%"/>
     </div>
     <div class="card-body">
-      <p class="login-box-msg">Sistem Informasi Rekomendasi Personel Direktorat Pamobvit Polda Lampung </p>
+      <p class="login-box-msg">Sistem Rekomendasi Pemilihan Perumahan Bandar Lampung</p>
 
       <form action="<?php echo base_url(); ?>Login/signin" method="post">
         <div class="input-group mb-3">
