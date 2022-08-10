@@ -14,6 +14,13 @@ class Alternatif_model extends CI_Model
         return $query;
     }
 
+    public function deleteAlternatif($id)
+    {
+        $this->db->where('id_nilai',$id);
+        $this->db->delete('alternatif');
+        return true;
+    }
+
     // public function showBobot()
     // {
     //     $this->db->order_by('id_nilai','ASC');

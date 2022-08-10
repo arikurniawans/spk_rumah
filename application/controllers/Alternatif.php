@@ -53,4 +53,21 @@ class Alternatif extends CI_Controller {
         }
     }
 
+    public function delete()
+    {
+        $id = $this->input->post('id');
+        
+        $hapus = $this->Alternatif_model->deleteAlternatif($id);
+        if($hapus)
+        {
+            $this->session->set_flashdata('message3','successfull');
+            redirect('alternatif');
+        }
+        else
+        {
+            $this->session->set_flashdata('message3','error');
+            redirect('alternatif');
+        }
+    }
+
 }

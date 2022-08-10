@@ -62,10 +62,116 @@
                       <td><?php echo $data->C3; ?></td>
                       <td><?php echo $data->C4; ?></td>
                       <td align="center">
-                          <a href="javascript:void(0);" data-toggle="modal" data-target="#editkriteria<?php echo $data->id_nilai; ?>" class="btn btn-flat btn-primary btn-xs">Edit</a>
-                          <a href="<?php echo base_url(); ?>kriteria/<?php echo $data->id_nilai; ?>" class="btn btn-flat btn-danger btn-xs">Hapus</a>
+                          <a href="javascript:void(0);" data-toggle="modal" data-target="#editalternatif<?php echo $data->id_nilai; ?>" class="btn btn-flat btn-primary btn-xs">Edit</a>
+                          <a href="javascript:void(0);" data-toggle="modal" data-target="#hapusalternatif<?php echo $data->id_nilai; ?>" class="btn btn-flat btn-danger btn-xs">Hapus</a>
                       </td>
                   </tr>
+
+                        <div class="modal fade" id="hapusalternatif<?php echo $data->id_nilai; ?>">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                          <form action="<?php echo base_url(); ?>alternatif/delete" method="post">
+                            <div class="modal-header" style="background-color: #dc3545; color: white;">
+                              <h4 class="modal-title">Hapus Alternatif</h4>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                            <input type="hidden" name="id" value="<?php echo $data->id_nilai; ?>"/>
+                              Apakah anda ingin menghapus data alternatif berikut ?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-flat btn-default" data-dismiss="modal">Batal</button>
+                                <button type="submit" class="btn btn-flat btn-danger">Hapus Data Alternatif</button>
+                            </div>
+                          </div>
+                          <!-- /.modal-content -->
+                          </form>
+                        </div>
+                        <!-- /.modal-dialog -->
+                      </div>
+                      <!-- /.modal -->
+
+        <div class="modal fade" id="editalternatif<?php echo $data->id_nilai; ?>">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+          <form action="<?php echo base_url(); ?>alternatif/create" method="post">
+            <div class="modal-header" style="background-color: #17a2b8; color: white;">
+              <h4 class="modal-title">Ubah Data Alternatif</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <input type="hidden" name="id" value="<?php echo $data->id_nilai; ?>"/>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Perumahan (Alternatif)</label>
+                    <select class="form-control" name="rumahan">
+                        <option value="">-Pilih Perumahan-</option>
+                        <option value="<?php echo $data->id_rumah; ?>" selected><?php echo $data->nama_perumahan; ?></option>
+                        <?php foreach($rumah as $a){ ?>
+                        <option value="<?php echo $a->id_rumah; ?>"><?php echo $a->nama_perumahan; ?></option>
+                        <?php } ?>
+                  </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Kriteria C1 - LUAS BANGUNAN (m<sup>2</sup>)</label>
+                    <select class="form-control" name="c1">
+                        <option value="">-Pilih Sub Kriteria-</option>
+                        <option value="<?php echo $data->id_c1; ?>" selected><?php echo $data->C1; ?></option>
+                        <?php foreach($c1 as $b){ ?>
+                        <option value="<?php echo $b->id_kriteria; ?>"><?php echo $b->sub_kriteria; ?></option>
+                        <?php } ?>
+                  </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Kriteria C2 - SARANA & PRASARANA</label>
+                    <select class="form-control" name="c2">
+                        <option value="">-Pilih Sub Kriteria-</option>
+                        <option value="<?php echo $data->id_c2; ?>" selected><?php echo $data->C2; ?></option>
+                        <?php foreach($c2 as $c){ ?>
+                          <option value="<?php echo $c->id_kriteria; ?>"><?php echo $c->sub_kriteria; ?></option>
+                        <?php } ?>
+                  </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Kriteria C3 - HARGA</label>
+                    <select class="form-control" name="c3">
+                        <option value="">-Pilih Sub Kriteria-</option>
+                        <option value="<?php echo $data->id_c3; ?>" selected><?php echo $data->C3; ?></option>
+                        <?php foreach($c3 as $d){ ?>
+                          <option value="<?php echo $d->id_kriteria; ?>"><?php echo $d->sub_kriteria; ?></option>
+                        <?php } ?>
+                  </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Kriteria C4 - AKSES PERUMAHAN DARI PUSAT KOTA</label>
+                    <select class="form-control" name="c4">
+                        <option value="">-Pilih Sub Kriteria-</option>
+                        <option value="<?php echo $data->id_c4; ?>" selected><?php echo $data->C4; ?></option>
+                        <?php foreach($c4 as $e){ ?>
+                          <option value="<?php echo $e->id_kriteria; ?>"><?php echo $e->sub_kriteria; ?></option>
+                        <?php } ?>
+                  </select>
+                  </div>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-flat btn-default" data-dismiss="modal">Batal</button>
+              <button type="submit" class="btn btn-flat btn-info">Simpan Data</button>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+          </form>
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+      <!-- /.modal -->
 
                   <?php } ?>
                 </table>
