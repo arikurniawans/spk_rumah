@@ -41,7 +41,7 @@
 
   <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="https://upload.wikimedia.org/wikipedia/commons/3/35/Lambang_Polda_Lampung.png" alt="AdminLTELogo" height="80" width="60">
+    <img class="animation__shake" src="https://w7.pngwing.com/pngs/799/518/png-transparent-white-orange-and-yellow-house-illustration-euclidean-house-element-angle-orange-happy-birthday-vector-images.png" alt="AdminLTELogo" height="80" width="60">
   </div>
 
   <!-- Navbar -->

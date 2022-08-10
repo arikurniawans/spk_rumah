@@ -96,7 +96,7 @@
         <div class="modal fade" id="editalternatif<?php echo $data->id_nilai; ?>">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
-          <form action="<?php echo base_url(); ?>alternatif/create" method="post">
+          <form action="<?php echo base_url(); ?>alternatif/edit" method="post">
             <div class="modal-header" style="background-color: #17a2b8; color: white;">
               <h4 class="modal-title">Ubah Data Alternatif</h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">

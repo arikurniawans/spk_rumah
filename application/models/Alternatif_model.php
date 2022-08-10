@@ -28,12 +28,12 @@ class Alternatif_model extends CI_Model
     //     return $query;
     // }
 
-    // public function editKriteria($id,$data)
-    // {
-    //     $this->db->where('id_kriteria',$id);
-    //     $this->db->update('kriteria',$data);
-    //     return true;
-    // }
+    public function editAlternatif($id,$data)
+    {
+        $this->db->where('id_nilai',$id);
+        $this->db->update('alternatif',$data);
+        return true;
+    }
 
     // public function showJumlah()
     // {

@@ -53,6 +53,31 @@ class Alternatif extends CI_Controller {
         }
     }
 
+    public function edit()
+    {
+        $id = $this->input->post('id');
+
+        $data = array(
+            'id_rumah' => $this->input->post('rumahan'),
+            'c1' => $this->input->post('c1'),
+            'c2' => $this->input->post('c2'),
+            'c3' => $this->input->post('c3'),
+            'c4' => $this->input->post('c4'),
+        );
+
+        $simpan = $this->Alternatif_model->editAlternatif($id, $data);
+        if($simpan)
+        {
+            $this->session->set_flashdata('message','successfull'); 
+            redirect('alternatif');
+        }
+        else
+        {
+            $this->session->set_flashdata('message','error'); 
+            redirect('alternatif');
+        }
+    }
+
     public function delete()
     {
         $id = $this->input->post('id');
